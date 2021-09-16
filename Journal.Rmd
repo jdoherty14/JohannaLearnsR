@@ -1,5 +1,5 @@
 ---
-title: "Assignments"
+title: "Assignments for Crim 250"
 output:
   html_document:
     toc: yes
@@ -12,6 +12,8 @@ output:
     toc_depth: '1'
 ---
 
+
+This page will contain all the assignments you submit for the class.
 
 This page will contain all the assignments you submit for the class.
 
@@ -169,6 +171,9 @@ What does this code do? Explain what each line is doing.
 Answer: These lines of code are generating a dataframe that shows the map of the US,  breaking up the information from the variable Murder into sections based on state. The lines also color-code the map based on the number of murders that occurred in that state. 
 
 $$\\[2in]$$
+
+
+
 
 
 

@@ -321,7 +321,7 @@ div.tocify {
   <a href="index.html">Home</a>
 </li>
 <li>
-  <a href="Journal.html">Journal</a>
+  <a href="Assignments.html">Assignments</a>
 </li>
 <li>
   <a href="Links.html">Links</a>
@@ -516,7 +516,7 @@ library(datasets)</code></pre>
 <p>Draw a histogram of <code>Murder</code> with proper labels and title.</p>
 <pre class="r"><code># histogram of Murder
 hist(dat$Murder, main=&quot;Histogram of Murder&quot;, xlab=&quot;Murder Rate&quot;, ylab=&quot;Frequency&quot;)</code></pre>
-<p><img src="Journal_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p><img src="Assignments_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
 </div>
 <div id="problem-6" class="section level3">
 <h3>Problem 6</h3>
@@ -532,14 +532,14 @@ summary(dat$Murder)</code></pre>
 <p>Repeat the same steps you followed for <code>Murder</code>, for the variables <code>Assault</code> and <code>Rape</code>. Now plot all three histograms together. You can do this by using the command <code>par(mfrow=c(3,1))</code> and then plotting each of the three.</p>
 <pre class="r"><code>#histogram of Assault
 hist(dat$Assault, main=&quot;Histogram of Assault&quot;, xlab=&quot;Assault Rate&quot;, ylab=&quot;Frequency&quot;)</code></pre>
-<p><img src="Journal_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p><img src="Assignments_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
 <pre class="r"><code>#Summary of Assault
 summary(dat$Assault)</code></pre>
 <pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
 ##    45.0   109.0   159.0   170.8   249.0   337.0</code></pre>
 <pre class="r"><code>#Histogram of Rape
 hist(dat$Rape, main=&quot;Histogram of Rape&quot;, xlab=&quot;Rape Rate&quot;, ylab=&quot;Frequency&quot;)</code></pre>
-<p><img src="Journal_files/figure-html/unnamed-chunk-7-2.png" width="672" /></p>
+<p><img src="Assignments_files/figure-html/unnamed-chunk-7-2.png" width="672" /></p>
 <pre class="r"><code>#Summary of Rape
 summary(dat$Rape)</code></pre>
 <pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
@@ -549,7 +549,7 @@ par(mfrow=c(3,1))
 hist(dat$Murder, main=&quot;Histogram of Murder&quot;, xlab=&quot;Murder Rate&quot;, ylab=&quot;Frequency&quot;)
 hist(dat$Assault, main=&quot;Histogram of Assault&quot;, xlab=&quot;Assault Rate&quot;, ylab=&quot;Frequency&quot;)
 hist(dat$Rape, main=&quot;Histogram of Rape&quot;, xlab=&quot;Rape Rate&quot;, ylab=&quot;Frequency&quot;)</code></pre>
-<p><img src="Journal_files/figure-html/unnamed-chunk-7-3.png" width="672" /></p>
+<p><img src="Assignments_files/figure-html/unnamed-chunk-7-3.png" width="672" /></p>
 <p>What does the command par do, in your own words (you can look this up by asking R <code>?par</code>)?</p>
 <p>Answer: the command par is used to set certain parameters within the data given to it. In this case, we used the par function to tell R that we wanted to plot 3 character vectors on histograms together in one plot.</p>
 <p>What can you learn from plotting the histograms together?</p>

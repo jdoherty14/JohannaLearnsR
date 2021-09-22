@@ -429,67 +429,67 @@ library(datasets)</code></pre>
 <p>List the variables contained in the dataset <code>USArrests</code>.</p>
 <pre class="r"><code>list(dat)</code></pre>
 <pre><code>## [[1]]
-##                Murder Assault UrbanPop Rape
-## Alabama          13.2     236       58 21.2
-## Alaska           10.0     263       48 44.5
-## Arizona           8.1     294       80 31.0
-## Arkansas          8.8     190       50 19.5
-## California        9.0     276       91 40.6
-## Colorado          7.9     204       78 38.7
-## Connecticut       3.3     110       77 11.1
-## Delaware          5.9     238       72 15.8
-## Florida          15.4     335       80 31.9
-## Georgia          17.4     211       60 25.8
-## Hawaii            5.3      46       83 20.2
-## Idaho             2.6     120       54 14.2
-## Illinois         10.4     249       83 24.0
-## Indiana           7.2     113       65 21.0
-## Iowa              2.2      56       57 11.3
-## Kansas            6.0     115       66 18.0
-## Kentucky          9.7     109       52 16.3
-## Louisiana        15.4     249       66 22.2
-## Maine             2.1      83       51  7.8
-## Maryland         11.3     300       67 27.8
-## Massachusetts     4.4     149       85 16.3
-## Michigan         12.1     255       74 35.1
-## Minnesota         2.7      72       66 14.9
-## Mississippi      16.1     259       44 17.1
-## Missouri          9.0     178       70 28.2
-## Montana           6.0     109       53 16.4
-## Nebraska          4.3     102       62 16.5
-## Nevada           12.2     252       81 46.0
-## New Hampshire     2.1      57       56  9.5
-## New Jersey        7.4     159       89 18.8
-## New Mexico       11.4     285       70 32.1
-## New York         11.1     254       86 26.1
-## North Carolina   13.0     337       45 16.1
-## North Dakota      0.8      45       44  7.3
-## Ohio              7.3     120       75 21.4
-## Oklahoma          6.6     151       68 20.0
-## Oregon            4.9     159       67 29.3
-## Pennsylvania      6.3     106       72 14.9
-## Rhode Island      3.4     174       87  8.3
-## South Carolina   14.4     279       48 22.5
-## South Dakota      3.8      86       45 12.8
-## Tennessee        13.2     188       59 26.9
-## Texas            12.7     201       80 25.5
-## Utah              3.2     120       80 22.9
-## Vermont           2.2      48       32 11.2
-## Virginia          8.5     156       63 20.7
-## Washington        4.0     145       73 26.2
-## West Virginia     5.7      81       39  9.3
-## Wisconsin         2.6      53       66 10.8
-## Wyoming           6.8     161       60 15.6</code></pre>
+##                Murder Assault UrbanPop Rape          state
+## Alabama          13.2     236       58 21.2        alabama
+## Alaska           10.0     263       48 44.5         alaska
+## Arizona           8.1     294       80 31.0        arizona
+## Arkansas          8.8     190       50 19.5       arkansas
+## California        9.0     276       91 40.6     california
+## Colorado          7.9     204       78 38.7       colorado
+## Connecticut       3.3     110       77 11.1    connecticut
+## Delaware          5.9     238       72 15.8       delaware
+## Florida          15.4     335       80 31.9        florida
+## Georgia          17.4     211       60 25.8        georgia
+## Hawaii            5.3      46       83 20.2         hawaii
+## Idaho             2.6     120       54 14.2          idaho
+## Illinois         10.4     249       83 24.0       illinois
+## Indiana           7.2     113       65 21.0        indiana
+## Iowa              2.2      56       57 11.3           iowa
+## Kansas            6.0     115       66 18.0         kansas
+## Kentucky          9.7     109       52 16.3       kentucky
+## Louisiana        15.4     249       66 22.2      louisiana
+## Maine             2.1      83       51  7.8          maine
+## Maryland         11.3     300       67 27.8       maryland
+## Massachusetts     4.4     149       85 16.3  massachusetts
+## Michigan         12.1     255       74 35.1       michigan
+## Minnesota         2.7      72       66 14.9      minnesota
+## Mississippi      16.1     259       44 17.1    mississippi
+## Missouri          9.0     178       70 28.2       missouri
+## Montana           6.0     109       53 16.4        montana
+## Nebraska          4.3     102       62 16.5       nebraska
+## Nevada           12.2     252       81 46.0         nevada
+## New Hampshire     2.1      57       56  9.5  new hampshire
+## New Jersey        7.4     159       89 18.8     new jersey
+## New Mexico       11.4     285       70 32.1     new mexico
+## New York         11.1     254       86 26.1       new york
+## North Carolina   13.0     337       45 16.1 north carolina
+## North Dakota      0.8      45       44  7.3   north dakota
+## Ohio              7.3     120       75 21.4           ohio
+## Oklahoma          6.6     151       68 20.0       oklahoma
+## Oregon            4.9     159       67 29.3         oregon
+## Pennsylvania      6.3     106       72 14.9   pennsylvania
+## Rhode Island      3.4     174       87  8.3   rhode island
+## South Carolina   14.4     279       48 22.5 south carolina
+## South Dakota      3.8      86       45 12.8   south dakota
+## Tennessee        13.2     188       59 26.9      tennessee
+## Texas            12.7     201       80 25.5          texas
+## Utah              3.2     120       80 22.9           utah
+## Vermont           2.2      48       32 11.2        vermont
+## Virginia          8.5     156       63 20.7       virginia
+## Washington        4.0     145       73 26.2     washington
+## West Virginia     5.7      81       39  9.3  west virginia
+## Wisconsin         2.6      53       66 10.8      wisconsin
+## Wyoming           6.8     161       60 15.6        wyoming</code></pre>
 <pre class="r"><code>head(dat)</code></pre>
-<pre><code>##            Murder Assault UrbanPop Rape
-## Alabama      13.2     236       58 21.2
-## Alaska       10.0     263       48 44.5
-## Arizona       8.1     294       80 31.0
-## Arkansas      8.8     190       50 19.5
-## California    9.0     276       91 40.6
-## Colorado      7.9     204       78 38.7</code></pre>
+<pre><code>##            Murder Assault UrbanPop Rape      state
+## Alabama      13.2     236       58 21.2    alabama
+## Alaska       10.0     263       48 44.5     alaska
+## Arizona       8.1     294       80 31.0    arizona
+## Arkansas      8.8     190       50 19.5   arkansas
+## California    9.0     276       91 40.6 california
+## Colorado      7.9     204       78 38.7   colorado</code></pre>
 <pre class="r"><code>names(dat)</code></pre>
-<pre><code>## [1] &quot;Murder&quot;   &quot;Assault&quot;  &quot;UrbanPop&quot; &quot;Rape&quot;</code></pre>
+<pre><code>## [1] &quot;Murder&quot;   &quot;Assault&quot;  &quot;UrbanPop&quot; &quot;Rape&quot;     &quot;state&quot;</code></pre>
 <pre class="r"><code>summary(dat)</code></pre>
 <pre><code>##      Murder          Assault         UrbanPop          Rape      
 ##  Min.   : 0.800   Min.   : 45.0   Min.   :32.00   Min.   : 7.30  
@@ -497,7 +497,14 @@ library(datasets)</code></pre>
 ##  Median : 7.250   Median :159.0   Median :66.00   Median :20.10  
 ##  Mean   : 7.788   Mean   :170.8   Mean   :65.54   Mean   :21.23  
 ##  3rd Qu.:11.250   3rd Qu.:249.0   3rd Qu.:77.75   3rd Qu.:26.18  
-##  Max.   :17.400   Max.   :337.0   Max.   :91.00   Max.   :46.00</code></pre>
+##  Max.   :17.400   Max.   :337.0   Max.   :91.00   Max.   :46.00  
+##     state          
+##  Length:50         
+##  Class :character  
+##  Mode  :character  
+##                    
+##                    
+## </code></pre>
 </div>
 <div id="problem-3" class="section level3">
 <h3>Problem 3</h3>
@@ -516,7 +523,7 @@ library(datasets)</code></pre>
 <p>Draw a histogram of <code>Murder</code> with proper labels and title.</p>
 <pre class="r"><code># histogram of Murder
 hist(dat$Murder, main=&quot;Histogram of Murder&quot;, xlab=&quot;Murder Rate&quot;, ylab=&quot;Frequency&quot;)</code></pre>
-<p><img src="Assignments_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p><img src="Assignments_files/figure-html/unnamed-chunk-5-1.png" width="480" /></p>
 </div>
 <div id="problem-6" class="section level3">
 <h3>Problem 6</h3>
@@ -532,14 +539,14 @@ summary(dat$Murder)</code></pre>
 <p>Repeat the same steps you followed for <code>Murder</code>, for the variables <code>Assault</code> and <code>Rape</code>. Now plot all three histograms together. You can do this by using the command <code>par(mfrow=c(3,1))</code> and then plotting each of the three.</p>
 <pre class="r"><code>#histogram of Assault
 hist(dat$Assault, main=&quot;Histogram of Assault&quot;, xlab=&quot;Assault Rate&quot;, ylab=&quot;Frequency&quot;)</code></pre>
-<p><img src="Assignments_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p><img src="Assignments_files/figure-html/unnamed-chunk-7-1.png" width="480" /></p>
 <pre class="r"><code>#Summary of Assault
 summary(dat$Assault)</code></pre>
 <pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
 ##    45.0   109.0   159.0   170.8   249.0   337.0</code></pre>
 <pre class="r"><code>#Histogram of Rape
 hist(dat$Rape, main=&quot;Histogram of Rape&quot;, xlab=&quot;Rape Rate&quot;, ylab=&quot;Frequency&quot;)</code></pre>
-<p><img src="Assignments_files/figure-html/unnamed-chunk-7-2.png" width="672" /></p>
+<p><img src="Assignments_files/figure-html/unnamed-chunk-7-2.png" width="480" /></p>
 <pre class="r"><code>#Summary of Rape
 summary(dat$Rape)</code></pre>
 <pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
@@ -549,7 +556,7 @@ par(mfrow=c(3,1))
 hist(dat$Murder, main=&quot;Histogram of Murder&quot;, xlab=&quot;Murder Rate&quot;, ylab=&quot;Frequency&quot;)
 hist(dat$Assault, main=&quot;Histogram of Assault&quot;, xlab=&quot;Assault Rate&quot;, ylab=&quot;Frequency&quot;)
 hist(dat$Rape, main=&quot;Histogram of Rape&quot;, xlab=&quot;Rape Rate&quot;, ylab=&quot;Frequency&quot;)</code></pre>
-<p><img src="Assignments_files/figure-html/unnamed-chunk-7-3.png" width="672" /></p>
+<p><img src="Assignments_files/figure-html/unnamed-chunk-7-3.png" width="480" /></p>
 <p>What does the command par do, in your own words (you can look this up by asking R <code>?par</code>)?</p>
 <p>Answer: the command par is used to set certain parameters within the data given to it. In this case, we used the par function to tell R that we wanted to plot 3 character vectors on histograms together in one plot.</p>
 <p>What can you learn from plotting the histograms together?</p>
@@ -565,6 +572,7 @@ library(&#39;ggplot2&#39;)
 ggplot(dat, aes(map_id=state, fill=Murder)) + 
   geom_map(map=map_data(&quot;state&quot;)) + 
   expand_limits(x=map_data(&quot;state&quot;)$long, y=map_data(&quot;state&quot;)$lat)</code></pre>
+<p><img src="Assignments_files/figure-html/unnamed-chunk-8-1.png" width="720" /></p>
 <p>What does this code do? Explain what each line is doing.</p>
 <p>Answer: These lines of code are generating a dataframe that shows the map of the US, breaking up the information from the variable Murder into sections based on state. The lines also color-code the map based on the number of murders that occurred in that state.</p>
 <p><span class="math display">\[\\[2in]\]</span></p>

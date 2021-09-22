@@ -104,7 +104,7 @@ Answer: This dataset contains the number of Murders, Assaults, and Rapes in each
 
 Draw a histogram of `Murder` with proper labels and title.
 
-```{r}
+```{r, echo = TRUE, fig.width = 5, fig.height = 8}
 # histogram of Murder
 hist(dat$Murder, main="Histogram of Murder", xlab="Murder Rate", ylab="Frequency")
 
@@ -125,7 +125,7 @@ Quartiles are 4 approximately evenly sized groups with the data ordered from lea
 
 Repeat the same steps you followed for `Murder`, for the variables `Assault` and `Rape`. Now plot all three histograms together. You can do this by using the command `par(mfrow=c(3,1))` and then plotting each of the three. 
 
-```{r}
+```{r, echo = TRUE, fig.width = 5, fig.height = 8}
 #histogram of Assault
 hist(dat$Assault, main="Histogram of Assault", xlab="Assault Rate", ylab="Frequency")
 #Summary of Assault

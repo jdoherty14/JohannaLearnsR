@@ -274,10 +274,13 @@ Answer: There are more English speaking males than females, but this is mainly b
 
 
 
-#__title: "Exam 1"
-#author: "Johanna Doherty"
-#date: "10/04/2021"
-#output: html_document__
+
+
+
+# title: "Exam 1"
+# author: "Johanna Doherty"
+# date: "10/04/2021"
+# output: html_document
 
 # Instructions
 

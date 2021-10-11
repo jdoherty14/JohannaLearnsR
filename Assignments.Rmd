@@ -172,21 +172,21 @@ Answer: These lines of code are generating a dataframe that shows the map of the
 
 $$\\[2in]$$
 
-# Title: Assignment 2
-# Subtitle: Crim 250: Statistics for the Social Sciences
-# Name: Johanna Doherty
-# Date: 09/24/2021
+# Assignment 2
+## Subtitle: Crim 250: Statistics for the Social Sciences
+Name: Johanna Doherty
+Date: 09/24/2021
 
 
-# Problem 1: Load data
+## Problem 1: Load data
 
-# Set your working directory to the folder where you downloaded the data.
+Set your working directory to the folder where you downloaded the data.
 setwd("/Users/johannadoherty/Documents/FALL 21/CRIM 250/Assign 2")
 
-# Read the data
+Read the data
 dat <- read.csv(file = 'dat.nsduh.small.1.csv')
 
-# What are the dimensions of the dataset? 
+What are the dimensions of the dataset? 
 names(dat)
 dim(dat)
 
@@ -194,30 +194,30 @@ Answer: The dimensions of the data are 7 variables/columns by 171 rows as seen a
 
 ## Problem 2: Variables
 
-# Describe the variables in the dataset.
+ Describe the variables in the dataset.
 Answer: These are all numeric variables in R, although not all are quantitative variables in the data set. For example, irsex is a qualitative variable, with two options male or female, but each sex has been coded to a corresponding number, either 1 or 2, to make it useful as a numeric variable in R. 
 
-# What is this dataset about? Who collected the data, what kind of sample is it, and what was the purpose of generating the data?
+What is this dataset about? Who collected the data, what kind of sample is it, and what was the purpose of generating the data?
 Answer: The dataset is about drug use and health in the United States. The NSDUH (National Survey of Drug Use and Health) collected the data from participants ages 12 years and older in 2019. This is an example of a state based sample survey. The purpose of collecting the data from this sample is to hopefully be able to generalize about the drug use habits and health of the wider US population. 
 
 
 ## Problem 3: Age and gender
 
-# What is the age distribution of the sample like? Make sure you read the codebook to know what the variable values mean.
+What is the age distribution of the sample like? Make sure you read the codebook to know what the variable values mean.
 hist(dat$age2)
 Answer: I used a histogram of the age2 variable (shown below) to demonstrate the distribution of age. Using the codebook to look at the meaning of the age2 variable, I can tell that the majority of respondents were between 35 and 49 years old (represented by the number 15 on this histogram). There was not a normal distribution of ages in this dataset, in fact the ages are skewed to the right, meaning there are more older participants than younger. 
 
-# Do you think this age distribution representative of the US population? Why or why  not?
+Do you think this age distribution representative of the US population? Why or why  not?
 I do not think this is entirely representative of the distribution of ages in the US Population. While I do believe there are a lot of Americans falling into the 35-49 age group, I do not think there is such a drastically higher frequency of people of this age group than others. It is likely that this age group was just the most likely to fill out this kind of survey. 
 
-# Is the sample balanced in terms of gender? If not, are there more females or males?
+Is the sample balanced in terms of gender? If not, are there more females or males?
 hist(dat$irsex)
 summary(dat$irsex)
 
 Answer: (in this above histogram, 1 represents male and 2 represents female). The dataset is almost balanced in terms of gender, as can be seen in the histogram. However, there are slightly more males in the data set than females. This can also be seen when looking at summary data of the gender variable (screenshot above), the mean is 1.468, meaning there are slightly more males than females in this data set. If it were perfectly balanced the mean should be exactly 1.5. 
 
 
-# Use this code to draw a stacked bar plot to view the relationship between sex and age. What can you conclude from this plot?
+Use this code to draw a stacked bar plot to view the relationship between sex and age. What can you conclude from this plot?
 tab.agesex <- table(dat$irsex, dat$age2)
 barplot(tab.agesex,
         main = "Stacked barchart",
@@ -228,7 +228,7 @@ barplot(tab.agesex,
 Answer: From this plot we can conclude that while most age group are roughly evenly split between males and females, some categories are overwhelmingly one or the other. For example, age group 8 (19 years old) seems to be entirely female, while age groups 6 and 7 (17 and 18 years old) seem to be entirely male. Overall, there are roughly even amounts of males and females for each age group, but there are some outliers. 
 
 ## Problem 4: Substance use
-# For which of the three substances included in the dataset (marijuana, alcohol, and cigarettes) do individuals tend to use the substance earlier?
+For which of the three substances included in the dataset (marijuana, alcohol, and cigarettes) do individuals tend to use the substance earlier?
 hist(dat$mjage)
 hist(dat$cigage)
 hist(dat$iralcage)
@@ -237,14 +237,14 @@ Answer: From these histograms, it appears that a higher frequency of respondents
 
 ## Problem 5: Sexual attraction
 
-# What does the distribution of sexual attraction look like? Is this what you expected?
+What does the distribution of sexual attraction look like? Is this what you expected?
 table(dat$sexatract)
 
 (For this variable; 1=heterosexual, 2=mostly attracted to opposite sex, 3=equally attracted to males and females, 4=mostly attracted to same sex, 5=only attracted to same sex, 6=not sure, 97=refused, 98=blank, 99=legitimate skip.)
 
 Answer: It looks like the vast majority of respondents are heterosexual (only attracted to the opposite gender), which is pretty much expected given the demographics of the US population. 
 
-# What is the distribution of sexual attraction by gender? 
+ What is the distribution of sexual attraction by gender? 
 tab.gendersexatract <- table(dat$sexatract, dat$irsex)
 barplot(tab.gendersexatract,
         main = "Stacked barchart",
@@ -257,12 +257,12 @@ Answer: The distribution of sexual attraction by gender show that the sexual ori
 
 ## Problem 6: English speaking
 
-# What does the distribution of English speaking look like in the sample? Is this what you might expect for a random sample of the US population?
+What does the distribution of English speaking look like in the sample? Is this what you might expect for a random sample of the US population?
 table(dat$speakengl)
 
 Answer: The vast majority of respondents answered that they speak English very well, with only 21 selecting Well, and very few selecting anything less proficient than that. This does make sense to me, given that the national language of the US is English, but there are also a significant number of immigrants in the US that may not be as proficient in English. I would say that this is close to what I expected, but I may have expected to see more less proficient answers. 
 
-# Are there more English speaker females or males?
+Are there more English speaker females or males?
 tab.sexspeakengl <- table(dat$speakengl, dat$irsex)
 barplot(tab.sexspeakengl,
         main = "Stacked barchart",
@@ -277,12 +277,12 @@ Answer: There are more English speaking males than females, but this is mainly b
 
 
 
-# title: "Exam 1"
-# author: "Johanna Doherty"
-# date: "10/04/2021"
-# output: html_document
+# "Exam 1"
+## author: "Johanna Doherty"
+date: "10/04/2021"
+output: html_document
 
-# Instructions
+Instructions
 
 a. Create a folder in your computer (a good place would be under Crim 250, Exams). 
 
@@ -297,7 +297,7 @@ dat<-read.csv("fatal-police-shootings-data.csv")
 ```
 
 
-# Problem 1 (10 points)
+Problem 1 (10 points)
 
 a. Describe the dataset. This is the source: https://github.com/washingtonpost/data-police-shootings . Write two sentences (max.) about this.
 
@@ -324,7 +324,7 @@ table(dat$armed)
 
 __I was definitely surprised to see an air conditioner, a nail gun, and wasp spray used as weapons against the police. __
 
-# Problem 2 (10 points)
+Problem 2 (10 points)
 
 a. Describe the age distribution of the sample. Is this what you would expect to see?
 ```{r}
@@ -347,8 +347,7 @@ table(dat$gender)
 
 __There are way more male victims of fatal police shootings than females, as seen in the table above. This is not at all surprising to me, in America the stereotypical "criminal" is usually thought of as a young man, so it makes sense that the police might feel most threatened by people that fall into this category.__
 
-
-# Problem 3 (10 points)
+ Problem 3 (10 points)
 
 a. How many police officers had a body camera, according to news reports? What proportion is this of all the incidents in the data? Are you surprised that it is so high or low?
 
@@ -369,7 +368,7 @@ __It is important to note that there is one unlabeled category in the fleeing va
 
 
 
-# Problem 4 (10 points) -  Answer only one of these (a or b).
+Problem 4 (10 points) -  Answer only one of these (a or b).
 
 a. Describe the relationship between the variables "body camera" and "flee" using a stacked barplot. What can you conclude from this relationship? 
 
@@ -404,7 +403,7 @@ __Your answer here.__
 
 
 
-# Extra credit (10 points)
+Extra credit (10 points)
 
 a. What does this code tell us? 
 

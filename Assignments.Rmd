@@ -423,12 +423,14 @@ c. Regarding missing values in problem 4, do you see any? If so, do you think th
 __In the flee variable, there is an unlabeled category. Since we can not determine what these 491 incidents represent in terms of fleeing, we have to omit them from our analysis of the fleeing variable, which means we treat them as missing values. Given that this missing category exists, it would not surprise me to see that other variables have missing data as well. Given that "fleeing" could be seen as a matter of opinion or a subjective question in some challenging circumstances, it makes sense to me that there might be missing data in this variable. It seems possible that some of the other variables with "gray areas" or that are less clear cut could have missing data as well.__
 
 
----
+
+
+
 # "Assignment 3"
 ## "Johanna Doherty"
 date: "Today's date here: 10/26/2021"
 output: html_document
----
+
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)

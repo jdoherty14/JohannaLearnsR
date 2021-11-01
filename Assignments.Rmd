@@ -552,4 +552,106 @@ __There are two issues with making this conclusion based on this data. Firstly l
 
 
 
+#title: "Exam 2"
+##author: "Johanna Doherty"
+##date: "11/01/2021"
+##output: html_document
+
+
+# Instructions
+
+a. Create a folder in your computer (a good place would be under Crim 250, Exams). 
+
+b. Download the dataset from the Canvas website (sim.data.csv) onto that folder, and save your Exam 2.Rmd file in the same folder.
+
+c. Data description: This dataset provides (simulated) data about 200 police departments in one year. It contains information about the funding received by the department as well as incidents of police brutality. Suppose this dataset (sim.data.csv) was collected by researchers to answer this question: **"Does having more funding in a police department lead to fewer incidents of police brutality?"**
+d. Codebook:
+- funds: How much funding the police department received in that year in millions of dollars.
+- po.brut: How many incidents of police brutality were reported by the department that year.
+- po.dept.code: Police department code
+
+# Problem 1: EDA (10 points) 
+
+Describe the dataset and variables. Perform exploratory data analysis for the two variables of interest: funds and po.brut.
+
+```{r}
+dat <- read.csv(file = 'sim.data.csv')
+names(dat)
+dim(dat)
+summary(dat)
+
+plot(dat$funds, dat$po.brut, main="Scatterplot Comparing Funds and Police Brutality", xlab="Funds, in millions", ylab="Police Brutality Incidents")
+```
+
+__This data set has 3 columns with 200 rows, which represents 200 police departments' data for the three variables: police department code, police brutality incidents, and funding available to the department. As we can see in the scatterplot above showing the relationship between the amount of funding and the quantity of police brutality incidents, there is a pretty clear negative correlation. From looking at this scatterplot it seems as though increased funding is correlated with fewer police brutality incidents. .__
+
+
+# Problem 2: Linear regression (30 points)
+
+a. Perform a simple linear regression to answer the question of interest. To do this, name your linear model "reg.output" and write the summary of the regression by using "summary(reg.output)". 
+
+```{r}
+# Remember to remove eval=FALSE!!
+reg.output <- lm(formula = dat$po.brut ~ dat$funds, data = dat)
+summary(reg.output)
+```
+
+
+b. Report the estimated coefficient, standard error, and p-value of the slope. Is the relationship between funds and incidents statistically significant? Explain.
+
+__The estimated coefficient is -0.367099, the standard error is 0.004496, and the p-value of the slope is 2.2e-16.  Given that the p-value is extremely small, and assuming we are using 0.05 as our significance value, then the relationship between funds and brutality incidents is statistically significant. This p-value essentially tells us that if the null hypothesis (no relationship between the two variables) were true, the chances of observing a statistic like one would be 2.2e-16, which is a very small chance. Given the summary of this linear regression, it seems that there is a pretty strong negative association between the two variables. Looking at this data and the regression we can say that a one million dollar increase in funding for a department is associated with .367099 fewer incidents of police brutality for a given year.__
+
+c. Draw a scatterplot of po.brut (y-axis) and funds (x-axis). Right below your plot command, use abline to draw the fitted regression line, like this:
+```{r}
+# Remember to remove eval=FALSE!!
+plot(dat$funds, dat$po.brut, main = "Regression of Funds over Brutality", xlab="Funds in millions", ylab="Brutality Incidents")
+abline(reg.output, col = "red", lwd=2)
+```
+Does the line look like a good fit? Why or why not?
+
+__The line looks like an ok fit, but the points definitely stray from the line at the top and bottom of the regression line. While it is certainly not a perfect linear fit, it seems close enough to continue with the analysis and check the other assumptions. __
+
+d. Are the four assumptions of linear regression satisfied? To answer this, draw the relevant plots. (Write a maximum of one sentence per assumption.) If not, what might you try to do to improve this (if you had more time)?
+
+```{r}
+plot(dat$funds, dat$po.brut, main="Scatterplot Comparing Funds and Police Brutality", xlab="Funds, in millions", ylab="Police Brutality Incidents")
+```
+
+__1. Linearity: Using a scatterplot of x,y or funds,po.brut we can see that the relationship between the two variables looks vaguely linear. It is not perfectly linear but it is close enough to say that the assumption has been satisfied for the purposes of this analysis. __
+
+```{r}
+plot(dat$funds, reg.output$residuals, main = "Residuals vs. X Plot", xlab="X, Funds", ylab="Residuals")
+abline(h = 0, lty="dashed")
+```
+
+__2. Independence: Looking at the residuals vs. X plot above, there is a definite pattern to the data, meaning that the data are likely not independent of each other and this assumption is not satisfied.__
+
+```{r}
+plot(dat$po.brut, dat$funds, main="Y vs. X Scatterplot")
+```
+
+__3.Homoscedasticity: Looking at the y vs. x scatterplot above, there is no fan shape or tendency for the data to grow or shrink in any given area observed. This means that this assumption has been met and that the variability in y about the same for all values of x. __
+
+```{r}
+plot(reg.output, which=2)
+```
+
+__4. Normality: In the Normal QQ plot seen above, we can see that the points stray pretty far from the line at the top and bottom of the line. While the section of the  data that follows the line has many more points, there are still a lot of points at the tails that do not follow the line and stray pretty far. Based on this, the normality assumption is not met for this data.  __
+
+__In order to fix this lack of model fit, I would use data transformation, like taking the log of y or squaring y, to see if these changes make the data fit the model a little better. If the transformed data fits the model more accurately, we can then proceed with analysis and later un-transform the results to make accurate statements.__
+
+e. Answer the question of interest based on your analysis.
+
+__Based on the linear regression analysis above, there are a few factors to consider in terms of answering the question of interest. Based on the summary of the regression, there is a strong negative correlation with an R-squared of .9712, and the relationship is statistically significant given that the p-value is 2.2e-16, which is much smaller than our significance value of 0.05. Using the regression model, we would say that a one million dollar increase in funding for a department is associated with .367099 fewer incidents of police brutality for a given year. However, given that two of the assumptions have not been met, and that the two that have been met are not very solidly met, it's not clear that we are really able to use this regression model with confidence. It's possible that while there is a clear relationship between these variables, it may not be a linear relationship, which means that this regression model might not be the best fit for this data.__
+
+# Problem 3: Data ethics (10 points)
+
+Describe the dataset. Considering our lecture on data ethics, what concerns do you have about the dataset? Once you perform your analysis to answer the question of interest using this dataset, what concerns might you have about the results?
+
+__This data set is based on simulated data from 200 police departments. My concern with this data set lies in what information the algorithm/simulation was based on and how representative it truly is of real data from real departments. I would like more information on how the simulated data was created/collected and what testing it went through to make sure that it is truly representative of the results from a range of diverse real departments. I'm also curious about the size of departments used, if we are comparing the Philadelphia PD to a tiny department in the middle of PA, then using the raw number of incidents would not be a good comparison given the difference in sizes. There would need to be a lot more clarity about the source of the data in order to use this analysis with more confidence.__ 
+
+__Given these concerns about the source of the data, after running my analysis my next concern would be that these results/relationship would be used to make assumptions about all police forces, regardless of whether the data is truly representative or not. Additionally, there are probably some confounding variables in this relationship, and it would be important to look at what is really causing this relationship before definitively deciding that increasing funding will reduce police brutality. We would also have to consider the effect that increasing funding to the police might have in other areas besides brutality. It seems to me that if the funding is not being spent in the right places, it's possible it wouldn't have the same effect as this data shows and could possibly even have a negative effect. Overall, given that the data is simulated, if is based on flawed or non-representative data, then any assumptions we make based on the data will not be accurate and should not be used to inform policy.__
+
+
+
 

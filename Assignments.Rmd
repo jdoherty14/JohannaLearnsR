@@ -277,9 +277,9 @@ Answer: There are more English speaking males than females, but this is mainly b
 
 
 
-# "Exam 1"
-## author: "Johanna Doherty"
-date: "10/04/2021"
+# Exam 1
+## author: Johanna Doherty
+date: 10/04/2021
 output: html_document
 
 Instructions
@@ -426,9 +426,9 @@ __In the flee variable, there is an unlabeled category. Since we can not determi
 
 
 
-# "Assignment 3"
-## "Johanna Doherty"
-date: "Today's date here: 10/26/2021"
+# Assignment 3
+## Johanna Doherty
+date: 10/26/2021
 output: html_document
 
 
@@ -552,9 +552,9 @@ __There are two issues with making this conclusion based on this data. Firstly l
 
 
 
-# "Exam 2"
-## "Johanna Doherty"
-date: "11/01/2021"
+# Exam 2
+## Johanna Doherty
+date: 11/01/2021
 output: html_document
 
 
@@ -656,9 +656,9 @@ __Given these concerns about the source of the data, after running my analysis m
 
 
   
-# "Assignment 4"
-## "Johanna Doherty"
-date: "11/08/2021"
+# Assignment 4
+## Johanna Doherty
+date: 11/08/2021
 output: html_document
 
 __Chapter 3: Data Visualizations:__
